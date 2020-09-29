@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const api = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion/Lucian.json';
+
+        const request = new XMLHttpRequest();
+
+        request.open('GET', api);
+
+        request.onload = () => {
+            console.log( JSON.parse(request.responseText) );
+        }
+        request.send();
+    </script>
+</body>
+</html>
