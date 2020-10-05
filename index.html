@@ -4,19 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const { value } = document.getElementById('champion');
+            const api = `http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion/${value}.json`;
+            console.log(api);
+            
+            
+            const request = new XMLHttpRequest();
+            
+            request.open('GET', api);
+    
+            request.onload = () => {
+                createChampion(JSON.parse(request.responseText).data);
+            }
+            request.send();
+        }
+
+        function createChampion(data){
+            const champion = Object.values(data)[0];
+
+            
+        }
+    </script>
 </head>
 <body>
-    <script>
-        const api = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion/Lucian.json';
-
-        const request = new XMLHttpRequest();
-
-        request.open('GET', api);
-
-        request.onload = () => {
-            console.log( JSON.parse(request.responseText) );
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
         }
-        request.send();
-    </script>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form label {
+            padding: 20px;
+            font-size: 1.20em;
+            color: #5383E8;
+        }
+
+        form input {
+            display: block;
+            
+            padding: 15px 150px 18px 17px;
+            background: none;
+            border: none;
+            line-height: 17px;
+            font-size: 14px;
+            color: #5383E8;
+            box-sizing: border-box;
+            outline: none;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .botao {
+            border: 1px solid #5383E8;
+            top: 0;
+            color: #5383E8;
+            right: 0;
+            margin: 10px 10px 0 0;
+            height: 30px;
+            padding: 0;
+            width: 150px;
+            
+        }
+
+        
+        
+    </style>
+
+    <div class="container">
+        <form onsubmit="handleSubmit(event)">
+            <label for="champion">Nome do personagem </label>
+            <input type="text" id="champion">
+            <input type="submit" class="botao">
+        </form>
+        
+        <div class="content">
+            <h2>Lucian</h2>
+        </div>
+    </div>
 </body>
 </html>
