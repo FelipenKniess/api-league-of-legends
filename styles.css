@@ -48,6 +48,7 @@ form input {
     height: 30px;
     padding: 0;
     width: 150px;
+    cursor: pointer;
 }
 
 #content {
@@ -61,7 +62,7 @@ form input {
 	margin-right: auto;
 }
 
-#content div{
+#content div, span{
     padding: 5px;
 }
 

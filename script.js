@@ -42,7 +42,7 @@ function createChampion(champion){
     const statsMp = champion.stats.mp;
     const statsArmor = champion.stats.armor;
     const statsAtkSpeed = champion.stats.attackspeed;
-    const stats = '<span style:>Status</span>'+
+    const stats = '<span style="color:red">Status: </span>'+
                   `<div><strong>HP: </strong> ${statsHp}</div>`+
                   `<div><strong>MP: </strong> ${statsMp}</div>`+
                   `<div><strong>ARMOR: </strong>: ${statsArmor}</div>`+
