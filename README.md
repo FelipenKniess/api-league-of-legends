@@ -1,2 +1,2 @@
 # examples-javascript
-Alguns exemplos de funcionalidades javascript.
+Conectando a uma API de League of Legends, realizando a busca por campeões listando alguns dados.
